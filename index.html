@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hola mundo</title>
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+		<script>
+			function Hola(props){
+				const name = props.name;
+				return React.DOM.h1({ 
+					id: 'Title',
+				}, `Hola ${name}`); //Interpolación de variables, el valor de la variable name se está colocando dentro del string = 'Hola' + name;
+			}
+		</script>
+	</body>
+</html>
