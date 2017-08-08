@@ -4,15 +4,39 @@
 		<title>Hola mundo</title>
 	</head>
 	<body>
+		<main id="app"></main>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
 		<script>
+			//Definición de la etructura del componente
 			function Hola(props){
 				const name = props.name;
 				return React.DOM.h1({ 
 					id: 'Title',
 				}, `Hola ${name}`); //Interpolación de variables, el valor de la variable name se está colocando dentro del string = 'Hola' + name;
 			}
+
+			//Vamos a instanciar el elemento de react, el primer parámetro es el componente y el segundo 
+
+			const hola = React.createElement(Hola, {
+				name: 'Platzi',
+			});
+
+			//El primer parámetro es el componente y el segundo en dónde se va a mostrar el componente
+			ReactDOM.render(
+				hola,
+				document.getElementById('app')
+				);
+
+			setTimeout(
+				()=> {
+					ReactDOM.render(
+						React.createElement(Hola, {name: 'Platzi!'}),
+						document.getElementById('app'))
+				}, 
+				1000
+			);
 		</script>
 	</body>
 </html>
